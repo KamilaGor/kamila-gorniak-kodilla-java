@@ -5,6 +5,7 @@ import com.kodilla.testing.calculator.Calculator;
 
 public class TestingMain {
     public static void main (String[] args) {
+        // dlatego, że mel
         SimpleUser simpleUser = new SimpleUser("theForumUser");
 
         String result = ((SimpleUser) simpleUser).getUsername();
@@ -14,10 +15,12 @@ public class TestingMain {
         } else {
             System.out.println("Error!");
         }
+        System.out.println();
         System.out.println("Test - pierwszy test jednostkowy: ");
-        Calculator calculator = new Calculator(3, 8);
-        int result1 = calculator.getAdd();
-        int result2 = calculator.getSubtract();
+        /* dlatego, że metoda statyczna, odwołuję się bezpośrednio przez nazwę klasy
+        (zmienne statyczne klasy dotyczą wszystkich jej obiektów) */
+        int result1 = Calculator.add(3,8);
+        int result2 = Calculator.subtract(3,8);
         if (result1==11 && result2==5) {
             System.out.println("pierwszy test jednostkowy ok");
         } else {
