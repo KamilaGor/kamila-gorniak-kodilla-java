@@ -15,11 +15,11 @@ public class BookLibrary {
         if(titleFragment.length()<3) return bookList;
         List<Book> resultList = libraryDatabase.listBooksWithCondition(titleFragment);
         if(resultList.size() >20) return bookList;
-        bookList = resultList;
-        return bookList;
+        return resultList;
+//        bookList = resultList;
+//        return bookList;
     }
-//    public List<Book> listBooksInHandsOf (LibraryUser libraryUser) {
-//        List<LibraryUser> userBooks  = new ArrayList<LibraryUser>();
-//        LibraryUser user = new LibraryUser("FirstName", "LastName", "00112233444");
-//    }
+    public List<Book> listBooksInHandsOf (LibraryUser libraryUser) {
+        return libraryDatabase.listBooksInHandsOf(libraryUser);
+    }
 }
