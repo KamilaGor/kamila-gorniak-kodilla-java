@@ -1,23 +1,23 @@
 package com.kodilla.stream;
 
-import com.kodilla.stream.beautifier.PoemBeautifier;
-import com.kodilla.stream.iterate.NumbersGenerator;
-import com.kodilla.stream.lambda.ExpressionExecutor;
-import com.kodilla.stream.reference.FunctionalCalculator;
+import com.kodilla.stream.book.Book;
+import com.kodilla.stream.book.BookDirectory;
+
+
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class StreamMain {
     public static void main(String [] args) {
+        BookDirectory theBookDirectory = new BookDirectory();
 
-        PoemBeautifier poemBeautifier = new PoemBeautifier();
+        Map<String, Book> theResultMapofBooks = theBookDirectory.getList().stream()
+                .filter(book -> book.getYearOfPublication() > 2005)
+                .collect(Collectors.toMap(Book::getSignature, book -> book));
 
-        poemBeautifier.beautify("aaaAAA", (decoratingText) -> decoratingText.substring(3, 6));
-        poemBeautifier.beautify("bbb", (decoratingText) -> decoratingText.toUpperCase());
-        poemBeautifier.beautify("ccc", (decoratingText -> decoratingText.concat("ABC")));
-        poemBeautifier.beautify("DDD", (decoratingText -> decoratingText.toLowerCase()) );
-        poemBeautifier.beautify("eee", (decoratingText -> decoratingText.replace('e', 'E')));
-        poemBeautifier.beautify("fffFFF", (decoratingText -> decoratingText.replaceFirst("fff", "FFF")));
-
-        System.out.println("Using Stream to generate even numbers from 1 to 20");
-        NumbersGenerator.generateEven(20);
+        System.out.println("# elements: " + theResultMapofBooks.size());
+        theResultMapofBooks.entrySet().stream()
+                .map(entry -> entry.getKey() + ": " + entry.getValue())
+                .forEach(System.out::println);
     }
 }
