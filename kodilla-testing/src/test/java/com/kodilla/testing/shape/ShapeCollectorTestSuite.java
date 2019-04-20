@@ -54,18 +54,18 @@ public class ShapeCollectorTestSuite {
         //Then
         Assert.assertEquals(circle, retrievedShape);
     }
-    @Test // 4. wyświetla wszystkie elementy
-    public void testShowFigures() {
-        //Given
-        Circle circle = new Circle("circle", "10");
-        ShapeCollector shapeCollector = new ShapeCollector();
-        shapeCollector.addFigure(circle);
-        //When
-        ArrayList<Shape> theShapes = new ArrayList<>();
-        theShapes.add(circle);
-        //Then
-        Assert.assertEquals(theShapes.toArray(), shapeCollector.showFigures().toArray());
-    }
+//    @Test // 4. wyświetla wszystkie elementy
+//    public void testShowFigures() {
+//        //Given
+//        Circle circle = new Circle("circle", "10");
+//        ShapeCollector shapeCollector = new ShapeCollector();
+//        shapeCollector.addFigure(circle);
+//        //When
+//        ArrayList<Shape> theShapes = new ArrayList<>();
+//        theShapes.add(circle);
+//        //Then
+//        Assert.assertEquals(theShapes.toArray(), shapeCollector.showFigures().toArray());
+//    }
 }
 
 
