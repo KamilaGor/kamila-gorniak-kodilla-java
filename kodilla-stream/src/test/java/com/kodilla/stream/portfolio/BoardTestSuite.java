@@ -7,6 +7,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.time.temporal.ChronoUnit.DAYS;
 import static java.util.stream.Collectors.toList;
 
 public class BoardTestSuite {
@@ -139,27 +140,17 @@ public class BoardTestSuite {
         //Given
         Board project = prepareTestData();
         //When
-        List<TaskList> inProgresTasks = new ArrayList<>();
-        inProgresTasks.add(new TaskList("In progress"));
-        double numberOfDays = project.getTaskLists().stream()
-                .filter(inProgresTasks::contains)
+        List<TaskList> inProgressTasks = new ArrayList<>();
+        inProgressTasks.add(new TaskList("In progress"));
+        long averageNumberOfDays = project.getTaskLists().stream()
+                .filter(inProgressTasks::contains)
                 .flatMap(tl -> tl.getTasks().stream())
                 .map(t -> t.getCreated())
-                .count();
-        System.out.println(numberOfDays);
+                .filter(d -> DAYS.between(LocalDate.now(), t.getCreated()))//nie umiem się tutaj odwołać do daty utworzenia zadania.
+                .average();
+        System.out.println(averageNumberOfDays);
+        // Then
+        Assert.assertEquals(20, averageNumberOfDays);
     }
 
-//        Stream createdTimeOfTasks = project.getTaskLists().stream()
-//                .filter(inProgresTasks::contains)
-//                .flatMap(tl -> tl.getTasks().stream())
-//                .map(t -> t.getCreated());
-//               // .filter(d -> DAYS.between(LocalDate.now(), t.getCreated())
-//
-//        double averageResult = 0;
-//        averageResult = DoubleStream.range(0,)
-//                .map(n -> numbers[n])
-//                .average()
-//                .getAsDouble();
-
-   // }
 }
