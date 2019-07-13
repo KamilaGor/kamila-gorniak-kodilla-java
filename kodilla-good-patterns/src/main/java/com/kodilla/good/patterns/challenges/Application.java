@@ -4,11 +4,11 @@ public class Application {
 
 	public static void main(String[] args) {
 
-		OrderRequestRetrieve orderRequestRetrieve = new OrderRequestRetrieve();
-		OrderRequest orderRequest = new OrderRequest;
+		OrderRequestRetriever orderRequestRetriever = new OrderRequestRetriever();
+		OrderRequest orderRequest = orderRequestRetriever.retrieve(); // po co zapisuję do klasy OrderRequest
 
 		ProductOrderService productOrderService = new ProductOrderService(new MailService(), new ItemOrderService(),
-				new ItemOrderRepository());
+				new ItemOrderRepository()); //co oznaczają ()
 		productOrderService.process(orderRequest);
 	}
 }

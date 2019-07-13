@@ -14,12 +14,13 @@ public class OrderProcessor {
 	}
 	public OrderDto process (final OrderRequest orderRequest) {
 		boolean isOrder = orderService.order(orderRequest.getUser(), orderRequest.getDateOfAcceptanceForProcessing(),
-				orderRequest.getDateOfOrder()) {
+				orderRequest.getDateOfOrder());
+		if (isOrder){
 			informationService.inform(orderRequest.getUser());
 			orderRepository.createOrder(orderRequest.getUser(), orderRequest.getDateOfAcceptanceForProcessing(),
 					orderRequest.getDateOfOrder());
 			return new OrderDto(orderRequest.getUser(), true);
-		} else {
+		}else{
 			return new OrderDto(orderRequest.getUser(), false);
 		}
 	}

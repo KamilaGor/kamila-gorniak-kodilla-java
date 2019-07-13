@@ -4,6 +4,6 @@ import java.time.LocalDateTime;
 
 public interface OrderRepository {
 
-	public boolean createOrder (User user, LocalDateTime dateOfAcceptanceForProcessing, LocalDateTime dateOfOrder);
+	boolean createOrder(User user, LocalDateTime dateOfAcceptanceForProcessing, LocalDateTime dateOfOrder);
 
 }
