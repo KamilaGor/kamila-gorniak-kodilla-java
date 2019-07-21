@@ -1,13 +1,11 @@
 package com.kodilla.good.patterns.challenges.flights;
 
-import java.time.format.DateTimeFormatter;
-
 public final class FlightData {
 
 	private final String flight;
 	private final String airportDepartures;
 	private final String airportArrivals;
-	private final String flightTime; // jak zapisać czas w formacie godziny
+	private final String flightTime;
 
 	public FlightData(final String flight, final String airportDepartures, final String airportArrivals, final String flightTime) {
 		this.flight = flight;
@@ -54,5 +52,15 @@ public final class FlightData {
 		result = 31 * result + (airportArrivals != null ? airportArrivals.hashCode() : 0);
 		result = 31 * result + (flightTime != null ? flightTime.hashCode() : 0);
 		return result;
+	}
+
+	@Override
+	public String toString() {
+		return "FlightData{" +
+				"flight='" + flight + '\'' +
+				", airportDepartures='" + airportDepartures + '\'' +
+				", airportArrivals='" + airportArrivals + '\'' +
+				", flightTime='" + flightTime + '\'' +
+				'}';
 	}
 }
