@@ -20,5 +20,4 @@ public final class FlightConnection1 {
 	public Set<FlightData> getSet() {
 		return new HashSet<>(flightConnectionSet);
 	}
-
 }

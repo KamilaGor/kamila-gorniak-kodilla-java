@@ -1,5 +1,10 @@
 package com.kodilla.good.patterns.challenges.flights;
 
+import java.security.cert.CollectionCertStoreParameters;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 public final class FlightData {
 
 	private final String flight;
@@ -28,6 +33,23 @@ public final class FlightData {
 
 	public String getFlightTime() {
 		return flightTime;
+	}
+
+	public String getFlightFromViaTo(final String airportDepartures, final String airportArrivals) {
+		FlightConnection1 flightConnection1 = new FlightConnection1();
+		Set<FlightConnection1> set = flightConnection1.getSet().stream()
+				.filter(n ->n.getAirportDepartures().equals("Gdańsk"))
+				.collect(Collectors.toSet());
+		Set<FlightConnection1> set1 =flightConnection1.getSet().stream()
+				.filter(n-> n.getAirportArrivals().equals("Warszawa"))
+				.collect(Collectors.toSet());
+		return "You can fly from " + airportDepartures + "to " + airportArrivals + "via: \n" + set.stream()
+				.map(n -> n.getAirportDepartures())
+				.filter(n -> n.set1.stream()
+						.map(x -> x.getAirportDepartures())
+						.collect(Collectors.toSet())
+						.contains("Kraków"))
+				.collect(Collectors.joining("\n"));
 	}
 
 	@Override

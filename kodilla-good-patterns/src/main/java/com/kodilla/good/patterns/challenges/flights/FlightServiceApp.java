@@ -1,5 +1,8 @@
 package com.kodilla.good.patterns.challenges.flights;
 
+import java.util.Set;
+import java.util.stream.Collectors;
+
 public class FlightServiceApp {
 
 	public static void main(String[] args) {
@@ -14,10 +17,5 @@ public class FlightServiceApp {
 				.filter(flight -> flight.getAirportArrivals().equals("Poznań"))
 				.forEach(System.out::println);
 		System.out.println("Międzylądowanie:");
-		FlightConnection1 layover = new FlightConnection1(); //z Gdańska do Krakowa i z Krakwoa do Warszawy
-		layover.getSet().stream()
-				.filter(flight -> flight.getAirportDepartures().equals("Gdańsk") && flight.getAirportArrivals().equals("Kraków")
-						&& flight.getAirportDepartures().equals("Kraków") && flight.getAirportArrivals().equals("Warszawa"))
-				.forEach(System.out::println);
 	}
 }
