@@ -6,11 +6,10 @@ import org.springframework.context.annotation.Scope;
 
 @Configuration
 public class BoardConfig {
-	//Napisz klasę konfigurującą Beany o nazwie BoardConfig, która utworzy trzy różne Beany
-	//reprezentujące listy zadań i wstrzyknie je do Beana klasy Board.
+
 	@Bean()
-	public Board getBoard() {
-		return new Board(new TaskList(), new TaskList(), new TaskList());
+	public Board Board() {
+		return new Board(toDoList(), inProgressList(), doneList());
 	}
 	@Bean(name = "toDoList")
 	@Scope("prototype")

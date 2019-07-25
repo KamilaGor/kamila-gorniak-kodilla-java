@@ -8,13 +8,10 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.ArrayList;
-
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class BoardTestSuite {
-	//Utwórz też test testTaskAdd(), który doda do każdej z list po jednym zadaniu (wcześniej uzyskując dostęp do Beana klasy Board).
-	//Test powinien sprawdzać czy dodane zadania da się odczytać.
+
 	@Test
 	public void testTaskAdd() {
 		//Given
