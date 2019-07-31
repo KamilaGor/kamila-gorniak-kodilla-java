@@ -1,9 +1,16 @@
 package com.kodilla.patterns.singleton;
 
-public class Logger {
+public final class Logger {
+	private static Logger loggerInstnce = null; //referencja do instancji klasy
 	private String lastLog = "";
 
-	public Logger() {
+	private Logger() {
+	}
+	public static Logger getInstance() {
+		if (loggerInstnce == null) {
+			loggerInstnce = new Logger();
+		}
+		return loggerInstnce;
 	}
 
 	public void log(String log) {
