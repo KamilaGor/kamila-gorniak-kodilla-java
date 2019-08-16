@@ -17,7 +17,6 @@ public final class FlightConnection1 {
 		flightConnectionSet.add(new FlightData("KRK003", "Kraków", "Warszawa", "1:25"));
 		flightConnectionSet.add(new FlightData("KRK033", "Kraków", "Poznań", "1:45"));
 	}
-
 	public Set<FlightData> getSet() {
 		return new HashSet<>(flightConnectionSet);
 	}

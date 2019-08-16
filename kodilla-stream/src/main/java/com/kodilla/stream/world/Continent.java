@@ -6,14 +6,13 @@ import java.util.Set;
 
 public final class Continent {
 
-	private final Set<Country> countries = new HashSet<>();
+    private final Set<Country> countries = new HashSet<>();
 
-	public void addCountry(Country country) {
-		countries.add(country);
-	}
-
-	public Set<Country> getCountries() {
-		return countries;
-	}
+    public void addCountry(Country country) {
+        countries.add(country);
+    }
+    public Set<Country> getCountries() {
+        return countries;
+    }
 }
 

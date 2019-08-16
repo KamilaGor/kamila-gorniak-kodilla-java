@@ -38,10 +38,10 @@ public final class FlightData {
 	public String getFlightFromViaTo(final String airportDepartures, final String airportArrivals) {
 		FlightConnection1 flightConnection1 = new FlightConnection1();
 		Set<FlightData> set = flightConnection1.getSet().stream()
-				.filter(n -> n.getAirportDepartures().equals(airportDepartures))
+				.filter(n ->n.getAirportDepartures().equals(airportDepartures))
 				.collect(Collectors.toSet());
-		Set<FlightData> set1 = flightConnection1.getSet().stream()
-				.filter(n -> n.getAirportArrivals().equals(airportArrivals))
+		Set<FlightData> set1 =flightConnection1.getSet().stream()
+				.filter(n-> n.getAirportArrivals().equals(airportArrivals))
 				.collect(Collectors.toSet());
 		return "You can fly from " + airportDepartures + "to " + airportArrivals + "via: \n" + set.stream()
 				.map(n -> n.getAirportDepartures())

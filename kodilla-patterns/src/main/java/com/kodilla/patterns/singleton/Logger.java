@@ -6,7 +6,6 @@ public final class Logger {
 
 	private Logger() {
 	}
-
 	public static synchronized Logger getInstance() {
 		if (loggerInstance == null) {
 			loggerInstance = new Logger();
@@ -18,7 +17,6 @@ public final class Logger {
 		lastLog = log;
 		System.out.println("Log: [" + log + "]");
 	}
-
 	public String getLastLog() {
 		return lastLog;
 	}

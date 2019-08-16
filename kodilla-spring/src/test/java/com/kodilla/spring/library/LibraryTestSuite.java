@@ -22,7 +22,6 @@ public class LibraryTestSuite {
 		//Then
 		//do nothing
 	}
-
 	@Test
 	public void testSaveToDb() {
 		//Given
@@ -33,7 +32,6 @@ public class LibraryTestSuite {
 		//Then
 		//do nothing
 	}
-
 	@Test
 	public void testContext() {
 		//Given

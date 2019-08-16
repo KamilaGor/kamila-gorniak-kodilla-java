@@ -7,21 +7,20 @@ public class ProductOrderService {
 	private OrderRepository orderRepository;
 
 	public ProductOrderService(final InformationService informationService, final OrderService orderService, final
-	OrderRepository orderRepository) {
+	                            OrderRepository orderRepository) {
 		this.informationService = informationService;
 		this.orderService = orderService;
 		this.orderRepository = orderRepository;
 	}
-
 	public OrderDto process(final OrderRequest orderRequest) {
 		boolean isOrdered = orderService.order(orderRequest.getUser(), orderRequest.getDateOfOrder(),
 				orderRequest.getDateOfAcceptanceForProcessing());
-		if (isOrdered) {
+		if(isOrdered) {
 			informationService.inform(orderRequest.getUser()); // może tu wrzucić jeszcze orderService
 			orderRepository.createOrder(orderRequest.getUser(), orderRequest.getDateOfOrder(),
 					orderRequest.getDateOfAcceptanceForProcessing());
 			return new OrderDto(orderRequest.getUser(), true);
-		} else {
+		}else{
 			return new OrderDto(orderRequest.getUser(), false);
 		}
 	}

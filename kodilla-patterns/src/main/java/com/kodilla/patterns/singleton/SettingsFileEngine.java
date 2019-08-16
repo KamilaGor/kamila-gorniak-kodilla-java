@@ -6,14 +6,12 @@ public final class SettingsFileEngine {
 
 	private SettingsFileEngine() { // jawne wyspecyfikowanie konstruktora plus oznaczenie go private
 	}
-
 	public static SettingsFileEngine getInstance() { //static- możemy wywołać bez obiektu;
-		if (settingsFileEngineInstance == null) { //spr czy pole jest zainicjowane, jeśli nie
+		if(settingsFileEngineInstance == null) { //spr czy pole jest zainicjowane, jeśli nie
 			settingsFileEngineInstance = new SettingsFileEngine(); //to create new obiekt i przypisuje go do pola
 		}
 		return settingsFileEngineInstance; //instatncja jest zwracana wywołującemu metodę
 	}
-
 	public String getFileName() {
 		return fileName;
 	}

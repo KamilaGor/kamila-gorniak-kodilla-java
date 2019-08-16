@@ -20,7 +20,7 @@ public class DbManager {
 	}
 
 	public static DbManager getInstance() throws SQLException {//tworzy obiekt wtedy, gdy jest potrzebny, czyli przy peirwszym wywołaniu tej metody
-		if (dbManagerInstance == null) {
+		if(dbManagerInstance == null) {
 			dbManagerInstance = new DbManager();
 		}
 		return dbManagerInstance;

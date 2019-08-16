@@ -13,7 +13,6 @@ public class ReaderTestSuite {
 		//When & Then
 		reader.read();
 	}
-
 	@Test
 	public void testConditional() {
 		//Given

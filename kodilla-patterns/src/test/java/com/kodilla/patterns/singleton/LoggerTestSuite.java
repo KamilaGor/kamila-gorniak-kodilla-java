@@ -10,7 +10,6 @@ public class LoggerTestSuite {
 	public void firstLog() { // czemu ta metoda nie może być statyczna ?
 		Logger.getInstance().log("aaa");
 	}
-
 	@Test
 	public void testGetLastLog() {
 		//Given

@@ -15,7 +15,7 @@ public final class ShapeFactory {
 			case RECTANGLE:
 				return new Rectangle("The long rectangle", 15.0, 2.5);
 			default:
-				return null;
+					return null;
 		}
 	}
 }

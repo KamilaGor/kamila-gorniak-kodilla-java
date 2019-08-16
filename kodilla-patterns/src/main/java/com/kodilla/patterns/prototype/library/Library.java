@@ -32,13 +32,12 @@ public final class Library extends Protype {
 	}
 
 	public Library shallowCopy() throws CloneNotSupportedException {
-		return (Library) super.clone();
+		return (Library)super.clone();
 	}
-
 	public Library deepCopy() throws CloneNotSupportedException {
-		Library libraryClone = (Library) super.clone();
+		Library libraryClone = (Library)super.clone();
 		libraryClone.books = new HashSet<>();
-		for (Book book : books) {
+		for(Book book: books) {
 			libraryClone.books.add(book);
 		}
 		return libraryClone;

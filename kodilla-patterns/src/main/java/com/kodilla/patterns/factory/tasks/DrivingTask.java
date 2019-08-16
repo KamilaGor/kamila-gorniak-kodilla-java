@@ -1,6 +1,6 @@
 package com.kodilla.patterns.factory.tasks;
 
-public final class DrivingTask implements Task {
+public final class DrivingTask implements Task{
 	final String taskName;
 	final String where;
 	final String using;
@@ -11,18 +11,15 @@ public final class DrivingTask implements Task {
 		this.where = where;
 		this.using = using;
 	}
-
 	@Override
 	public void executeTask() {
 		this.isTaskExecuted = true;
 		System.out.println("Driving task done!");
 	}
-
 	@Override
 	public String getTaskName() {
 		return taskName;
 	}
-
 	@Override
 	public boolean isTaskExecuted() {
 		return isTaskExecuted;

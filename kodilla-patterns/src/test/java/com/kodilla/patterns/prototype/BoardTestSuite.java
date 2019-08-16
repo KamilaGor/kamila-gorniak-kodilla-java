@@ -2,7 +2,6 @@ package com.kodilla.patterns.prototype;
 
 import org.junit.Assert;
 import org.junit.Test;
-
 import java.util.stream.IntStream;
 
 public class BoardTestSuite {

@@ -8,7 +8,7 @@ public class OrderRequest {
 	private LocalDateTime dateOfOrder;
 	private LocalDateTime dateOfAcceptanceForProcessing;
 
-	public OrderRequest(final User user, final LocalDateTime dateOfOrder, final LocalDateTime dateOfAcceptanceForProcessing) {
+	public OrderRequest (final User user, final LocalDateTime dateOfOrder, final LocalDateTime dateOfAcceptanceForProcessing) {
 		this.user = user;
 		this.dateOfOrder = dateOfOrder;
 		this.dateOfAcceptanceForProcessing = dateOfAcceptanceForProcessing;
@@ -17,11 +17,9 @@ public class OrderRequest {
 	public User getUser() {
 		return user;
 	}
-
 	public LocalDateTime getDateOfOrder() {
 		return dateOfOrder;
 	}
-
 	public LocalDateTime getDateOfAcceptanceForProcessing() {
 		return dateOfAcceptanceForProcessing;
 	}
