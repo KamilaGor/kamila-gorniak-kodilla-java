@@ -10,14 +10,17 @@ public final class Rectangle implements Shape {
 		this.width = width;
 		this.length = length;
 	}
+
 	@Override
 	public String getName() {
 		return name;
 	}
+
 	@Override
 	public double getArea() {
 		return width * length;
 	}
+
 	@Override
 	public double getCircumference() {
 		return 2 * width + 2 * length;

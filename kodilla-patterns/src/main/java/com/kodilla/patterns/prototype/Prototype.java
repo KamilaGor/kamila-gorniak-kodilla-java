@@ -4,6 +4,6 @@ public class Prototype<T> implements Cloneable { //<T> oznacza, że deklarując 
 	// typ obieków, na kt. ta klasa będzie operowała(jak przy kolekcjach)
 	@Override
 	public T clone() throws CloneNotSupportedException {
-		return (T)super.clone();
+		return (T) super.clone();
 	}
 }

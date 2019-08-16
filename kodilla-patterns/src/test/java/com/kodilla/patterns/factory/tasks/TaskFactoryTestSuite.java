@@ -15,6 +15,7 @@ public class TaskFactoryTestSuite {
 		Assert.assertEquals(true, shoppingTask.isTaskExecuted());
 		Assert.assertEquals("Food", shoppingTask.getTaskName());
 	}
+
 	@Test
 	public void testPaintingTask() {
 		//Given
@@ -26,6 +27,7 @@ public class TaskFactoryTestSuite {
 		Assert.assertEquals(true, paintingTask.isTaskExecuted());
 		Assert.assertEquals("Landscape", paintingTask.getTaskName());
 	}
+
 	@Test
 	public void testDrivingTask() {
 		//Given

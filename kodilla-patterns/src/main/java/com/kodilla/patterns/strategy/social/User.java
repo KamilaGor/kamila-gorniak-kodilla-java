@@ -11,9 +11,11 @@ public class User {
 	public String getName() {
 		return name;
 	}
+
 	public String sharePost() {
 		return socialPublisher.share();
 	}
+
 	public void setPublishingStrategy(SocialPublisher socialPublisher) {
 		this.socialPublisher = socialPublisher;
 	}

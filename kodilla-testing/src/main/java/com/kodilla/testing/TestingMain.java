@@ -7,7 +7,7 @@ import com.kodilla.testing.calculator.Calculator;
 import java.util.ArrayList;
 
 public class TestingMain {
-    public static void main (String[] args) {
+	public static void main(String[] args) {
 
-    }
+	}
 }

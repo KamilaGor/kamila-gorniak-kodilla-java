@@ -4,77 +4,78 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class ForumUser {
-    private String name;
-    private String  realName;
-    private ArrayList<ForumPost> posts = new ArrayList<ForumPost>();
-    private LinkedList<ForumComment> comments = new LinkedList<ForumComment>();
-    //kolekcja przechowuje obiekty typu ForumPost - obiekty są od razu tworzone, dlatego nei muszą być dodawane do konstruktora
-    public ForumUser(String name, String realName) {
-        //name visible on forum
-        this.name = name;
-        //real name of the user
-        this.realName = realName;
-    }
+	private String name;
+	private String realName;
+	private ArrayList<ForumPost> posts = new ArrayList<ForumPost>();
+	private LinkedList<ForumComment> comments = new LinkedList<ForumComment>();
 
-    public void addPost(String author, String postBody){
-        ForumPost thePost = new ForumPost(postBody, author);
-        posts.add(thePost);
-    }
+	//kolekcja przechowuje obiekty typu ForumPost - obiekty są od razu tworzone, dlatego nei muszą być dodawane do konstruktora
+	public ForumUser(String name, String realName) {
+		//name visible on forum
+		this.name = name;
+		//real name of the user
+		this.realName = realName;
+	}
 
-    public void addComment(ForumPost thePost, String author, String commentBody){
-        ForumComment theComment = new ForumComment(thePost, commentBody,author);
-        comments.add(theComment);
-    }
+	public void addPost(String author, String postBody) {
+		ForumPost thePost = new ForumPost(postBody, author);
+		posts.add(thePost);
+	}
 
-    public int getPostsQuantity(){
-        return posts.size();
-    }
+	public void addComment(ForumPost thePost, String author, String commentBody) {
+		ForumComment theComment = new ForumComment(thePost, commentBody, author);
+		comments.add(theComment);
+	}
 
-    public int getCommentsQuantity(){
-         return comments.size();
-    }
+	public int getPostsQuantity() {
+		return posts.size();
+	}
 
-    public ForumPost getPost (int postNumber){
-        //returning null means that the operation was unsuccessful
-        ForumPost thePost = null;
-        if (postNumber >= 0 && postNumber < posts.size()){
-            thePost = posts.get(postNumber);
-        }
-        return thePost;
-    }
+	public int getCommentsQuantity() {
+		return comments.size();
+	}
 
-    public ForumComment getComment(int commentNumber){
-        //returning null means that the operation was unsuccessful
-        ForumComment theComment = null;
-        if (commentNumber >= 0 && commentNumber < comments.size()) {
-            theComment = comments.get(commentNumber);
-        }
-        return theComment;
-    }
+	public ForumPost getPost(int postNumber) {
+		//returning null means that the operation was unsuccessful
+		ForumPost thePost = null;
+		if (postNumber >= 0 && postNumber < posts.size()) {
+			thePost = posts.get(postNumber);
+		}
+		return thePost;
+	}
 
-    public boolean removePost(ForumPost thePost){
-        boolean result = false;
-        if (posts.contains(thePost)) {
-            posts.remove(thePost);
-            result = true;
-        }
-        return result;
-    }
+	public ForumComment getComment(int commentNumber) {
+		//returning null means that the operation was unsuccessful
+		ForumComment theComment = null;
+		if (commentNumber >= 0 && commentNumber < comments.size()) {
+			theComment = comments.get(commentNumber);
+		}
+		return theComment;
+	}
 
-    public boolean removeComment(ForumComment theComment){
-        boolean result = false;
-        if (comments.contains(theComment)) {
-            comments.remove(theComment);
-            result = true;
-        }
-        return result;
-    }
+	public boolean removePost(ForumPost thePost) {
+		boolean result = false;
+		if (posts.contains(thePost)) {
+			posts.remove(thePost);
+			result = true;
+		}
+		return result;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public boolean removeComment(ForumComment theComment) {
+		boolean result = false;
+		if (comments.contains(theComment)) {
+			comments.remove(theComment);
+			result = true;
+		}
+		return result;
+	}
 
-    public String getRealName() {
-        return realName;
-    }
+	public String getName() {
+		return name;
+	}
+
+	public String getRealName() {
+		return realName;
+	}
 }

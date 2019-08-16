@@ -22,6 +22,7 @@ public class UserTestSuite {
 		Assert.assertEquals("(Facebook publisher) Publish on Facebook ", juliaShouldPublish);
 		Assert.assertEquals("(Snapchat publisher) Publish on Snapchat ", majaShouldPublish);
 	}
+
 	@Test
 	public void testIndividualSharingStrategy() {
 		//Given

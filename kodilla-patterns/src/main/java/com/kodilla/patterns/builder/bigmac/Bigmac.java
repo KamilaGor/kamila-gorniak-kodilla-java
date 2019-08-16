@@ -39,11 +39,12 @@ public final class Bigmac {
 			return new Bigmac(bun, burgers, sauce, ingredients);
 		}
 	}
+
 	private Bigmac(final String bun, final int burgers, final String sauce, List<String> ingredients) {
 		this.bun = bun;
 		this.burgers = burgers;
 		this.sauce = sauce;
-		this.ingredients = new ArrayList<>(ingredients );
+		this.ingredients = new ArrayList<>(ingredients);
 	}
 
 	public String getBun() {

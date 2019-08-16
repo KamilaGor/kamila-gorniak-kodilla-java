@@ -10,6 +10,7 @@ public class Checkers {
 		this.playerOne = playerOne;
 		this.playerTwo = playerTwo;
 	}
+
 	public Board getBoard() {
 		return board;
 	}
@@ -78,6 +79,7 @@ public class Checkers {
 			}
 			return new Checkers(board, playerOne, playerTwo); //tworzy obiekt klasy Checkers i go zwraca
 		}
+
 		;
 	}
 }

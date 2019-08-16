@@ -16,6 +16,7 @@ public class DbManagerTestSuite {
 		//Then
 		Assert.assertNotNull(dbManager.getConnection());
 	}
+
 	@Test
 	public void testSelectUsers() throws SQLException {
 		//Given
@@ -30,12 +31,13 @@ public class DbManagerTestSuite {
 		while (rs.next()) {
 			System.out.println(rs.getInt("ID") + rs.getString("FIRSTNAME")
 					+ rs.getString("LASTNAME"));
-			counter ++;
+			counter++;
 		}
 		rs.close();
 		statement.close();
 		Assert.assertEquals(5, counter);
 	}
+
 	@Test
 	public void testSelectUsersAndPosts() throws SQLException {
 		//Given
@@ -43,7 +45,7 @@ public class DbManagerTestSuite {
 		//When
 		String sqlQuery = "SELECT FIRSTNAME, LASTNAME, COUNT(*) AS POSTS_NUMBER FROM USERS U " +
 				"JOIN ISSUES I ON U.ID = I.USER_ID_ASSIGNEDTO " +
-				 "GROUP BY U.ID " +
+				"GROUP BY U.ID " +
 				"HAVING COUNT(*) >= 2";
 		Statement statement = dbManager.getConnection().createStatement();
 		ResultSet rs = statement.executeQuery(sqlQuery);
@@ -52,7 +54,7 @@ public class DbManagerTestSuite {
 		while (rs.next()) {
 			System.out.println(rs.getString("FIRSTNAME") + ", "
 					+ rs.getString("LASTNAME"));
-			counter ++;
+			counter++;
 		}
 		rs.close();
 		statement.close();

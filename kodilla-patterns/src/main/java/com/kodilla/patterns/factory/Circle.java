@@ -1,6 +1,6 @@
 package com.kodilla.patterns.factory;
 
-public final class Circle implements Shape{
+public final class Circle implements Shape {
 	final String name;
 	final double radius;
 
@@ -8,14 +8,17 @@ public final class Circle implements Shape{
 		this.name = name;
 		this.radius = radius;
 	}
+
 	@Override
 	public String getName() {
 		return name;
 	}
+
 	@Override
 	public double getArea() {
 		return Math.PI * Math.pow(radius, 2.0); //korzystamy ze stałej PI z biblioteki Math
 	}
+
 	@Override
 	public double getCircumference() {
 		return 2 * Math.PI * radius;

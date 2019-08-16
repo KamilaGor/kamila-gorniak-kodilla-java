@@ -8,14 +8,17 @@ public final class Square implements Shape {
 		this.name = name;
 		this.width = width;
 	}
+
 	@Override
 	public String getName() {
 		return name;
 	}
+
 	@Override
 	public double getArea() {
 		return Math.pow(width, 2.0);
 	}
+
 	@Override
 	public double getCircumference() {
 		return 4 * width;

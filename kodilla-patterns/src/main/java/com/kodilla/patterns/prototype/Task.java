@@ -6,9 +6,11 @@ public final class Task {
 	public Task(final String name) { // konstruktor inicjujący pole name
 		this.name = name;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	@Override
 	public String toString() {
 		return "    Task [ " + name + " ]";
