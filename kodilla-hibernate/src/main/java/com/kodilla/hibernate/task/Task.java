@@ -11,6 +11,7 @@ public class Task {
 	private String description;
 	private Date created;
 	private int duration;
+	private TaskFinancialDetails taskFinancialDetails; //pole przechowujące referencję do obiektu typu TFD
 
 	public Task() {//Hibernate podczas odczytywania obiektów z bazy danych) używa bezparametrowego konstruktora
 	}
@@ -43,6 +44,13 @@ public class Task {
 	public int getDuration() {
 		return duration;
 	}
+	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER) //cascade - określa co ma się dziać z rekordami w tabeli zależnej (czyli TASKS_FINANCIALS)
+	// w momencie, gdy usuwamy lub zapisujemy rekord w tabeli TASKS to automatycznie zostanie usunięty lub zapisany rekord w tabeli TASKS_FINANCIAL
+	//fetch - określa czy podczas wczytywania encji Task z bazy danych mają być automatycznie odczytywane ("dociągane") wszystkie zależne rekordy z tabeli
+	@JoinColumn(name="TASKS_FINANCIALS_ID")
+	public TaskFinancialDetails getTaskFinancialDetails() {
+		return taskFinancialDetails;
+	}
 
 	private void setId(int id) {//mogą mieć modyfikator=private, wówczas nikt nie będzie ich mógł wywołać spoza klasy
 		// Dla Hibernate będą jednak w zupełności wystarczające.
@@ -59,5 +67,9 @@ public class Task {
 
 	private void setDuration(int duration) {
 		this.duration = duration;
+	}
+
+	public void setTaskFinancialDetails(TaskFinancialDetails taskFinancialDetails) { //musi być public - będziemy wywoływać go w testach
+		this.taskFinancialDetails = taskFinancialDetails;
 	}
 }
