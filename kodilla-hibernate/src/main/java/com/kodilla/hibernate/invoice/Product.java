@@ -6,32 +6,35 @@
 //import java.util.List;
 //
 //@Entity
-//@Table(name="INVOICES")
-//public class Invoice {
+//@Table(name="PRODUCTS")
+//public class Product {
 //	private int id;
-//	private String number;
+//	private String name;
 //	private List<Item> items = new ArrayList<>();
 //
-//	public Invoice() {}
-//
-//	public Invoice(String number) {
-//		this.number = number;
+//	public Product() {
 //	}
+//
+//	public Product(String name) {
+//		this.name = name;
+//	}
+//
 //	@Id
 //	@GeneratedValue
 //	@NotNull
-//	@Column(name="INVOICE_ID", unique=true)
+//	@Column(name="ID", unique = true)
 //	public int getId() {
 //		return id;
 //	}
 //	@NotNull
-//	@Column(name="NUMBER")
-//	public String getNumber() {
-//		return number;
+//	@Column(name="PRODUCT_NAME")
+//	public String getName() {
+//		return name;
 //	}
+//
 //	@OneToMany(
 //			targetEntity = Item.class,
-//			mappedBy = "invoice",
+//			mappedBy = "product",
 //			cascade = CascadeType.ALL,
 //			fetch = FetchType.LAZY
 //	)
@@ -39,12 +42,12 @@
 //		return items;
 //	}
 //
-//	public void setId(int id) {
+//	private void setId(int id) {
 //		this.id = id;
 //	}
 //
-//	public void setNumber(String number) {
-//		this.number = number;
+//	private void setName(String name) {
+//		this.name = name;
 //	}
 //
 //	public void setItems(List<Item> items) {
