@@ -96,7 +96,7 @@ public class CompanyDaoTestSuite {
 
 		//When
 		List<Employee> lastName1 = employeeDao.retrieveLastname("Smith");
-		List<Company> company1 = companyDao.retriveCompanyNameByFirst3Letters("COMPANY_NAME");
+		List<Company> company1 = companyDao.retriveCompanyNameByFirst3Letters("Dat");
 
 		//Then
 		Assert.assertEquals(1, lastName1.size());

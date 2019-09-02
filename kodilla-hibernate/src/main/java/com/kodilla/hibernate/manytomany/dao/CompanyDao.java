@@ -14,5 +14,5 @@ import java.util.List;
 @Repository
 public interface CompanyDao extends CrudRepository<Company, Integer> {//nie wprowadza nowych met., udostępnia standarowo dostępne
 	@Query(nativeQuery = true)
-	List<Company> retriveCompanyNameByFirst3Letters(@Param("COMPANY_NAME") String name);
+	List<Company> retriveCompanyNameByFirst3Letters(@Param("CMP") String name);
 }
